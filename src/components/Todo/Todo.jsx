@@ -25,7 +25,7 @@ function Todo({ todoData, onEdit, isFinished, onFinished, onDel}) {
             : (isFinished) ? <span className="text-lg font-bold px-2"><s className="decoration-2">{todoData}</s></span> : <span className="text-lg font-bold px-2">{todoData}</span>}
 
             <Button onClickHanlder={() => {
-                (isEdit) ? ((changedData) ? onEdit(changedData) : alert("Please Enter a Todo")) :'';
+                (isEdit) ? ((changedData.trim()) ? onEdit(changedData.trim()) : alert("Please Enter a Todo")) :'';
                 setIsEdit(!isEdit);
                 setChangedData(todoData);
             }} text={(isEdit) ? "Save": "Edit"} />

@@ -19,8 +19,8 @@ export default function InputField() {
             />
 
             <Button onClickHanlder={() => {
-                (inputValue) ?
-                dispatch({type: "Add_Todo", payload: { todoText: inputValue, finished: false }})
+                (inputValue.trim()) ?
+                dispatch({type: "Add_Todo", payload: { todoText: inputValue.trim(), finished: false }})
                 : alert("Please Enter a Todo");
                 setInputValue('');
             }} text={"AddTodo"}/>
