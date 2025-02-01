@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { memo, useState } from "react"
 import Button from "../Button/Button";
 
-export default function Todo({ todoData, onEdit, isFinished, onFinished, onDel}) {
+function Todo({ todoData, onEdit, isFinished, onFinished, onDel}) {
 
     const [ isEdit, setIsEdit ] = useState(false);
     
@@ -35,3 +35,5 @@ export default function Todo({ todoData, onEdit, isFinished, onFinished, onDel})
         </div>
     )
 }
+
+export default memo(Todo);
