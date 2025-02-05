@@ -4,6 +4,7 @@ import TodoReducerContext from './components/Context/TodoReducerContext'
 import TodoReducer from './components/TodoReducer/TodoReducer'
 import InputField from './components/InputField/InputField';
 import TodoList from './components/TodoList/TodoList';
+import useTodoStore from './store/TodoStore';
 
 function App() {
 
@@ -33,22 +34,26 @@ function App() {
   //     It is used for lazy initialization, meaning it only runs once when the component mounts, instead of every render.
 
 
-  const [ list, dispatch ] = useReducer(TodoReducer, [], () => {
-    const savedTodoList = localStorage.getItem('TodoList');
-    return savedTodoList ? JSON.parse(savedTodoList) : [];
-  })
+  // const [ list, dispatch ] = useReducer(TodoReducer, [], () => {
+  //   const savedTodoList = localStorage.getItem('TodoList');
+  //   return savedTodoList ? JSON.parse(savedTodoList) : [];
+  // })
 
-  useEffect(() => {
-    localStorage.setItem("TodoList", JSON.stringify(list));
-  },[list])
+  // Zustand store
+
+  // const { list, dispatch } = useTodoStore();
+
+  // useEffect(() => {
+  //   localStorage.setItem("TodoList", JSON.stringify(list));
+  // },[list])
   
   return (
-  <TodoReducerContext.Provider value={{ list, dispatch }}>
+  // <TodoReducerContext.Provider value={{ list, dispatch }}>
     <div className='flex flex-col items-center h-[100vh] mt-10'>
     <InputField />
     <TodoList />
     </div>
-  </TodoReducerContext.Provider>
+  // </TodoReducerContext.Provider>
   )
 }
 

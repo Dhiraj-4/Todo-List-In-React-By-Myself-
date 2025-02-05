@@ -1,12 +1,14 @@
 import { useContext, useState } from "react"
 import Button from "../Button/Button";
-import TodoReducerContext from './../Context/TodoReducerContext';
+// import TodoReducerContext from './../Context/TodoReducerContext';
+import useTodoStore from "../../store/TodoStore";
+// import todoStore from "../../store/TodoStore";
 
 export default function InputField() {
 
     const [ inputValue, setInputValue ] = useState('');
 
-    const { dispatch } = useContext(TodoReducerContext);
+    const { dispatch } = useTodoStore();
 
     return (
         <div>

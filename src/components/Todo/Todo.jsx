@@ -1,4 +1,4 @@
-import { memo, useState } from "react"
+import { useState } from "react"
 import Button from "../Button/Button";
 
 function Todo({ todoData, onEdit, isFinished, onFinished, onDel}) {
@@ -38,4 +38,4 @@ function Todo({ todoData, onEdit, isFinished, onFinished, onDel}) {
     )
 }
 
-export default memo(Todo);
+export default Todo;

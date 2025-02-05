@@ -1,11 +1,15 @@
 import { useContext, useState } from "react"
-import TodoReducerContext from "../Context/TodoReducerContext"
+// import TodoReducerContext from "../Context/TodoReducerContext"
 import Todo from "../Todo/Todo";
 import Button from "../Button/Button";
+import useTodoStore from "../../store/TodoStore";
+// import todoStore from "../../store/TodoStore";
 
 export default function TodoList() {
 
-    const { list, dispatch } = useContext(TodoReducerContext);
+    // const { list, dispatch } = useContext(TodoReducerContext);
+
+    const { list, dispatch } = useTodoStore();
 
     const [ sortTodoList, setSortTodoList ] = useState("All");
 
